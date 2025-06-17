@@ -1,0 +1,233 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.container {
+    position: relative;
+}
+
+.birthday{
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+
+@keyframes up {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(225,184,128,255);
+}
+
+.envelope::before {
+    content: '';
+    position: absolute;
+    top: -105px;
+    left: 44px;
+    width: 212px;
+    height: 212px;
+    background-color: rgba(225,184,128,255);
+    border-radius: 30px 0 0 0;
+    transform: rotate(45deg);
+}
+
+.card {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    width: 270px;
+    height: 170px;
+    background-color: rgba(241,212,198,255);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2 );
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    border: 3px solid rgb(187, 136, 97);
+    border-style: dotted;
+    top: 12px;
+    left: 12px;
+    width: 240px;
+    height: 140px;
+    background-color: rgba(241,212,198,255);
+    border-radius: 5px 5px 0 0;
+}
+
+.text {
+    position: absolute;
+    font-family: "URW Chancery L", cursive;
+    top: 19px;
+    left: 85px;
+    line-height: 28px;
+    font-size: 24px;
+    color: rgb(182, 115, 63);
+    font-weight: bold;
+    text-align: center;
+}
+
+.heart {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    top: 117px;
+    left: 105px;
+    width: 23px;
+    height: 23px;
+    background-color: rgb(225, 8, 8);
+    transform: rotate(-45deg);
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background-color: rgb(225, 8, 8);
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -13px;
+    left: 0;
+}
+
+.heart::after {
+    left: 13px;
+    top: 0;
+}   
+
+.hearts {
+    position: absolute;
+    top: 10px;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: translateY(0) rotate(-45deg) scale(0.3);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-150px) rotate(-45deg) scale(1.3);
+        opacity: 0.5;
+    }
+}
+
+.one, .two, .three, .four, .five {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    top: 50px;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(225, 8, 8);
+    transform: rotate(-45deg);
+}
+
+.one::before, .one::after,
+.two::before, .two::after,
+.three::before, .three::after,
+.four::before, .four::after,
+.five::before, .five::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(225, 8, 8);
+    border-radius: 50%;
+}
+
+.one::before, .two::before, .three::before, .four::before, .five::before {
+    top: -6px;
+    left: 0;
+}
+
+.one::after, .two::after, .three::after, .four::after, .five::after {
+    left: 6px;
+    top: 0;
+}
+
+.one {
+    left: 10px;
+    animation: heartbeat 1s ease-out infinite;
+}
+
+.two {
+    left: 30px;
+    animation: heartbeat 2s ease-out infinite;
+}
+.three {
+    left: 50px;
+    animation: heartbeat 1.5s ease-out infinite;
+}
+.four {
+    left: 70px;
+    animation: heartbeat 2.3s ease-out infinite;
+}
+.five {
+    left: 90px;
+    animation: heartbeat 1.7s ease-out infinite;
+}
+
+.front{
+    position: absolute;
+    border-right: 180px solid rgb(187, 136, 97);
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    width: 0;
+    height: 0;
+    top: 5px;
+    left: 120px;
+    z-index: 10;
+}
+
+.front::before {
+    content: '';
+    position: absolute;
+    border-left: 300px solid rgb(183, 122, 76);
+    border-top: 195px solid transparent;
+    width: 0;
+    height: 0;
+    top: -95px;
+    left: -120px;
+}
+
+.shadow {
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    top: 650px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.03 );
+    z-index: -1;
+    animation: scale 3s linear infinite;
+}
+
+@keyframes scale{
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
