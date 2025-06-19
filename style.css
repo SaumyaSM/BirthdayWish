@@ -27,23 +27,78 @@ body{
     100% { transform: translateY(0); }
 }
 
-.envelope {
+.envelope-wrapper {
+    background-color: rgba(225,184,128,255);
+    border-radius: 5px;
+}
+
+.envelope{
     position: relative;
     width: 300px;
-    height: 200px;
-    background-color: rgba(225,184,128,255);
+    height: 100px;
 }
 
 .envelope::before {
     content: '';
     position: absolute;
-    top: -105px;
-    left: 44px;
-    width: 212px;
-    height: 212px;
-    background-color: rgba(225,184,128,255);
-    border-radius: 30px 0 0 0;
-    transform: rotate(45deg);
+    z-index: 1;
+    border-top: 140px solid  rgba(225,184,128,255);
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    top: 0px;
+    transform-origin: top;
+    transition: all 0.5s ease-in-out 0.7s;
+    z-index: 4;
+    border-radius: 5px;
+}
+
+.stamp {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    top: 15px;
+    left: 130px;
+    width: 23px;
+    height: 23px;
+    z-index: 4;
+    background-color: rgb(225, 8, 8);
+    transform: rotate(-45deg);
+    transition: transform 0.5s ease-in-out 1s;
+    cursor: pointer;
+}
+
+.stamp::before,
+.stamp::after {
+    content: '';
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background-color: rgb(225, 8, 8);
+    border-radius: 50%;
+}
+
+.stamp::before {
+    top: -13px;
+    left: 0;
+}
+
+.stamp::after {
+    left: 13px;
+    top: 0;
+}   
+
+.flap .envelope::before{
+    z-index: 0;
+    transform: rotateX(180deg);
+}
+
+.flap .stamp{
+    transform: rotate(90deg);
+    transition-delay: 0.1s;
+}
+.hearts {
+    position: absolute;
+    top: 10px;
 }
 
 .card {
@@ -55,6 +110,7 @@ body{
     background-color: rgba(241,212,198,255);
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2 );
+    z-index: 2;
 }
 
 .card::before {
@@ -189,13 +245,13 @@ body{
 .front{
     position: absolute;
     border-right: 180px solid rgb(187, 136, 97);
-    border-top: 95px solid transparent;
+    border-top: 94px solid transparent;
     border-bottom: 100px solid transparent;
     width: 0;
     height: 0;
     top: 5px;
     left: 120px;
-    z-index: 10;
+    z-index: 3;
 }
 
 .front::before {
@@ -230,4 +286,12 @@ body{
     100% {
         transform: scale(1);
     }
+}
+
+.no-animation .one,
+.no-animation .two,
+.no-animation .three,
+.no-animation .four,
+.no-animation .five {
+    animation: none !important;
 }
