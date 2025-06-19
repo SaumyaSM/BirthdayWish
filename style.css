@@ -3,7 +3,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('images/background.jpg');
+    background-image: url('images/b4.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -186,7 +186,7 @@ body{
     }
 }
 
-.one, .two, .three, .four, .five {
+.one, .two, .three, .four, .five, .six {
     position: relative;
     display: inline-block;
     margin: 0 10px;
@@ -201,7 +201,8 @@ body{
 .two::before, .two::after,
 .three::before, .three::after,
 .four::before, .four::after,
-.five::before, .five::after {
+.five::before, .five::after,
+.six::before, .six::after {
     content: '';
     position: absolute;
     width: 10px;
@@ -210,36 +211,40 @@ body{
     border-radius: 50%;
 }
 
-.one::before, .two::before, .three::before, .four::before, .five::before {
+.one::before, .two::before, .three::before, .four::before, .five::before, .six::before {
     top: -6px;
     left: 0;
 }
 
-.one::after, .two::after, .three::after, .four::after, .five::after {
+.one::after, .two::after, .three::after, .four::after, .five::after, .six::after{
     left: 6px;
     top: 0;
 }
 
 .one {
-    left: 10px;
+    left: 5px;
     animation: heartbeat 1s ease-out infinite;
 }
 
 .two {
-    left: 30px;
+    left: 10px;
     animation: heartbeat 2s ease-out infinite;
 }
 .three {
-    left: 50px;
+    left: 30px;
     animation: heartbeat 1.5s ease-out infinite;
 }
 .four {
-    left: 70px;
+    left: 50px;
     animation: heartbeat 2.3s ease-out infinite;
 }
 .five {
-    left: 90px;
+    left: 70px;
     animation: heartbeat 1.7s ease-out infinite;
+}
+.six {
+    left: 90px;
+    animation: heartbeat 2s ease-out infinite;
 }
 
 .front{

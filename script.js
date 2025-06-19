@@ -12,6 +12,11 @@ $(document).ready(function() {
             $(".card").stop().animate({
                 top: "-90px"
             }, "200");
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 }
+            });
         }, 900); 
           $(".hearts").addClass("no-animation");// Delay to allow flap animation to complete
         } else {
@@ -25,3 +30,6 @@ $(document).ready(function() {
         }
     });
 });
+
+
+
